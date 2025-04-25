@@ -1,0 +1,13 @@
+{
+  "name": "web-scraping",
+  "version": "1.0.0",
+  "description": "projeto basico com puppeteer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "puppeteer": "^24.7.2"
+  }
+}
