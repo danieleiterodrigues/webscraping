@@ -50,10 +50,11 @@ async function printScreen() {
 app.get('/', async (req, res) => {
   try {
     // Gera o screenshot e retorna o caminho do arquivo
-    const screenshotPath = await printScreen();
+    const fileName = await printScreen();
 
     // Retorna o arquivo como resposta
-    res.sendFile(screenshotPath);
+    const fileUrl = `{${req.protocol}}://${req.get('host')}/screenchots/${fileName}`;
+    res.json({ url: fileUrl });
   } catch (error) {
     res.status(500).json({ error: 'Erro ao gerar o screenshot' });
   }
